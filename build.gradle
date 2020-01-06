@@ -13,7 +13,7 @@ repositories {
 }
 jar {
     manifest { 
-        attributes(‘Main-Class’: ‘com.gk.games.handCricket.app.HandCricketApplication.java’) 
+        attributes('Main-Class': 'com.gk.games.handCricket.app.HandCricketApplication.java') 
     }
 }
 dependencies {
