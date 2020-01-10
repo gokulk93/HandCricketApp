@@ -14,6 +14,10 @@ public class HandCricketGame {
 	@Autowired 
 	private InningsWinner inningsWinner;
 	
+	public int autoPlay(){
+		return innings.playGame();
+	}
+	
 	public String startMatch(String playerOneName, String playerTwoName){
 		Player playerOne = new Player();
 		Player playerTwo = new Player();
@@ -25,7 +29,8 @@ public class HandCricketGame {
 		
 		playerOne.setTotalScore(totalScore1);
 		playerTwo.setTotalScore(totalScore2);
-		
+		System.out.println("Total Score one"+totalScore1);
+		System.out.println("Total Score two"+totalScore2);
 		System.out.println("Total Score: "+ playerOne.getTotalScore() +" :: " + playerTwo.getTotalScore());
 		
 		return inningsWinner.calculateWinner(playerOne, playerTwo);

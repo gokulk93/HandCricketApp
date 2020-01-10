@@ -13,11 +13,14 @@ public class InningsService {
 	
 	@Autowired
 	private RandomRunGenerator randomNumber;
+	
 	private int playerOne;
 	private int playerTwo;
-	private List<Integer> scoreList = new ArrayList<Integer>();
+	
+	
 	public int playGame(){
-		int totalScore =0;
+		int totalScore = 0;
+		List<Integer> scoreList = new ArrayList<Integer>();
 		
 		for(int i=0; i<6; i++){
 			playerOne = randomNumber.generateRun();
@@ -25,8 +28,8 @@ public class InningsService {
 			
 			if(playerOne == playerTwo){
 				System.out.println("OUT");
-				totalScore =scoreList.stream().mapToInt( a -> a).sum();
-				scoreList.clear();
+				scoreList.stream().mapToInt( a -> a).sum();
+				
 				break;
 			}else{
 				System.out.println("Bats Man Score : " +playerOne);
@@ -34,7 +37,9 @@ public class InningsService {
 			}
 		}
 		totalScore = scoreList.stream().mapToInt( a -> a).sum();
-		scoreList.clear();
+		
+		
+		System.out.println("Total score:"+totalScore);
 		return totalScore;
 	}
 }
